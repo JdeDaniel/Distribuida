@@ -5,7 +5,6 @@ def pedirSecretoAlice() -> int:
     a = int(input("a: "))
     return a
 
-
 def clavePublicaAlice(p: int, g: int, a: int) -> int:   
     A = pow(g, a, p)  # B = g^b mod p
     print(f"Alice, tu clave pública es: {A}")
@@ -13,7 +12,7 @@ def clavePublicaAlice(p: int, g: int, a: int) -> int:
 
 def claveCompartidaAlice(B: int, a: int, p: int) -> int:
     clave_compartida = pow(B, a, p)  # (B^a) mod p
-    print(f"Tu clave compartida es: {clave_compartida}")
+    print(f"Alicia, tu clave compartida es: {clave_compartida}")
     return clave_compartida
 
 
