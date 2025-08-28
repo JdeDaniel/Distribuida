@@ -1,3 +1,5 @@
+from sympy import isprime
+
 print("Algoritmo Diffie-Hellman")
 
 # 1. Parámetros públicos
@@ -5,7 +7,29 @@ print("Algoritmo Diffie-Hellman")
 #g = 5         # generador
 
 p = int(input("p: "))
-g = int(input("g: "))
+
+#Comprobacion de p como numero primo usando isprime
+
+while True:
+    try:
+        p = int(input("p: "))
+        if isprime(p):
+            break
+        else:
+            print("Ingrese un numero primo.")
+    except ValueError:
+        print("Error. Ingrese un numero entero primo.")
+
+
+while True:
+    try:
+        g = int(input("g: "))
+        if g < 1 and g<p:
+            break
+        else:
+            print("Ingrese un numero entero mayor a 1 y menor a p.")
+    except ValueError:
+        print("Error. Ingrese un numero entero.")
 
 
 print(f"Parámetros públicos: p = {p}, g = {g}")
