@@ -1,30 +1,31 @@
 from sympy import isprime
 import alice
 import bob
+import random
 
 def establecerParametros():
 
     while True:
         try:
-            p = int(input("Ingrese el valor de p: "))
+            p = random.randint(5,20)
             if isprime(p):
                 break
             else:
-                print("Ingrese un numero primo.")
+                print("Espere a que el numero primo se genere.")
         except ValueError:
-            print("Error. Ingrese un numero entero primo.")
+            print("Error.")
 
     print(" ")
 
     while True:
         try:
-            g = int(input("Ingrese el valor de g: "))
+            g = random.randint(1,p)
             if 1 < g < p :
                 break
             else:
-                print("Ingrese un numero entero mayor a 1 y menor a p.")
+                print("Espere a que se genere g.")
         except ValueError:
-            print("Error. Ingrese un numero entero.")
+            print("Error.")
 
     print(" ")
     print(f"Parámetros públicos establecidos: p = {p}, g = {g}")

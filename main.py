@@ -1,7 +1,9 @@
 import alice, bob, dh
 
-print(" ")
-print("Algoritmo Diffie-Hellman")
-print(" ")
-dh.clavesCorrectas()
+while True:
+    print(" ")
+    print("Algoritmo Diffie-Hellman")
+    print(" ")
+    input("Presiona Enter para continuar...")
+    dh.clavesCorrectas()
 
